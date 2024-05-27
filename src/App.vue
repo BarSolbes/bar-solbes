@@ -1,48 +1,40 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+import { mapActions, mapState } from 'pinia';
+import { useDataStore } from './stores/data.js'
+import AppMenu from './components/AppMenu.vue';
+import ErrMsg from './components/ErrMsg.vue';
+import AppFooter from './components/AppFooter.vue';
+
+export default {
+  components: {
+    AppMenu,
+    ErrMsg,
+    AppFooter
+  },
+  methods: {
+    ...mapActions(useDataStore, ['loadData'])
+  },
+  computed: {
+    ...mapState(useDataStore, {
+      messages: 'messages',
+    })
+  },
+  mounted() {
+    this.loadData()
+  }
+};
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <app-menu></app-menu>
+  <err-msg v-for="message in messages" :key="message.id" v-bind:message="message"></err-msg>
+  <router-view></router-view>
 
-    <div class="wrapper">
-      <div>Hola mundo</div>
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <app-footer></app-footer>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+<style>
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/icon?family=Pacifico");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css");
 </style>
