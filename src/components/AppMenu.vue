@@ -25,7 +25,7 @@ export default {
 					</div>
 
 					<div class="col-4">
-						<router-link to="/"><img v-bind:src="'/img/logo.jpg'" alt="Image"></router-link>
+						<router-link to="/"><img src="/public/img/logo.png" alt="Image"></router-link>
 					</div>
 
 					<div class="col-2">
