@@ -1,15 +1,4 @@
 <script>
-export default {
-	data() {
-		return {
-
-		}
-	},
-	methods: {
-
-	}
-}
-
 </script>
 <template>
 	<div class="container-fluid">
@@ -45,7 +34,7 @@ export default {
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<div class="d-lg-none d-md-block">
-							<router-link class="nav-item nav-link" to="/reservar">Reservar</router-link>
+							<router-link class="nav-item nav-link" to="/calendario">Reservar</router-link>
 							<router-link class="nav-item nav-link" to="/menus">Menu</router-link>
 							<router-link class="nav-item nav-link" to="/listAlergenos">Alérgenos</router-link>
 							<router-link class="nav-item nav-link" to="/aboutUs">Sobre nosotros</router-link>
