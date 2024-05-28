@@ -101,7 +101,7 @@ export default {
 
 <style scoped>
 h1 {
-    font-family: 'pacifico';
+    font-family: "Times New Roman", Times, serif;
     color: #1f79ff;;
 }
 </style>

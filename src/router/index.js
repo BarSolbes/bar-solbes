@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Calendario from '../views/Calendario.vue'
 import AddReserva from '../views/AddReserva.vue'
-import ListAlergenos from '../views/ListAlergenos.vue'
+import ListAlergenos from '../views/listAlergenos.vue'
 import aboutUs from '../views/AboutUs.vue'
 import Menu from '../views/Menu.vue'
 
@@ -26,12 +26,12 @@ const router = createRouter({
       props: true
     },
     {
-      path: '/listAlergenos',
+      path: '/Eventos',
       name: 'alergenos',
       component: ListAlergenos
     },
     {
-      path: '/menus',
+      path: '/Carta',
       name: 'listMenus',
       component: Menu
     },

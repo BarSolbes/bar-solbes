@@ -266,7 +266,7 @@ export default {
 #register {
 
     color: #1f79ff;
-    font-family: 'pacifico';
+    font-family: "Times New Roman", Times, serif;
 }
 
 h1 {
@@ -370,11 +370,11 @@ button:focus {
 }
 
 h6 {
-    font-family: 'pacifico';
+    font-family: "Times New Roman", Times, serif;
 }
 
 h3 {
-    font-family: 'pacifico';
+    font-family: "Times New Roman", Times, serif;
     color: #1f79ff;
 }
 
@@ -384,7 +384,7 @@ ul {
 
 li h6 {
     margin-top: 10px;
-    font-family: 'pacifico';
+    font-family: "Times New Roman", Times, serif;
     float: left;
 }
 

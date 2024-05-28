@@ -1,147 +1,115 @@
-<script>
-
-export default {
-    data() {
-    },
-    computed: {
-    },
-    methods: {
-    },
-};
-</script>
 <template>
-    <div class="container">
-        <h1 class="mb-3">Menús de nuestro Restaurante</h1>
-        <div class="card-group vgr-cards">
-            <div class="card align-items-center">
-                <div class="card-img-body">
-                    <img class="card-img" :src="'/img/menu1.png'" alt="Card image cap">
-                </div>
-                <div class="card-body text-center">
-                    <h4 class="card-title">Menú Koerà - Japonés</h4>
-                    <p class="card-text">Se puede decir que la cocina coreana es una cocina de tipo rural, 
-                        basada en alimentos sencillos, en su mayoría procedentes del huerto familiar, 
-                        a los que se da un tratamiento especial, con las salsas y fermentados, obteniendo 
-                        unos platos llenos de sabor, muy ricos en umami.</p>
-                    <a @click="$router.push('/calendario')" class="btn btn-outline-primary">Reserva Ya</a>
-                </div>
-            </div>
-            <div class="card align-items-center">
-                <div class="card-img-body">
-                    <img class="card-img" :src="'/img/menu2.png'" alt="Card image cap">
-                </div>
-                <div class="card-body text-center">
-                    <h4 class="card-title">Menú Aleman</h4>
-                    <p class="card-text">Entre las más populares podrás hallar la variedad 
-                        Bratwurst (salchichas para asar), Bierwurst (salchicha ahumada), 
-                        Bockwurst (en base a tripa de cerdo o res) y Currywurst que se acompaña 
-                        con una deliciosa salsa de curry.</p>
-                    <a @click="$router.push('/calendario')" class="btn btn-outline-primary">Reserva Ya</a>
-                </div>
-            </div>
-            <div class="card align-items-center">
-                <div class="card-img-body">
-                    <img class="card-img" :src="'/img/menu3.png'" alt="Card image cap">
-                </div>
-                <div class="card-body text-center">
-                    <h4 class="card-title">Menu venezolano</h4>
-                    <p class="card-text">Las comidas más conocidas de la gastronomía venezolana son 
-                        las asociadas con el maíz, más que nada con las harinas de maíz, por las famosas arepas; 
-                        también el pabellón criollo, con su arroz blanco, los frijoles negros, la carne mechada y 
-                        el plátano.</p>
-                    <a @click="$router.push('/calendario')" class="btn btn-outline-primary">Reserva Ya</a>
-                </div>
-            </div>
+  <div class="container">
+    <h1 class="mb-3">Nuestra Carta</h1>
+    <div class="card-group vgr-cards">
+      <div class="card align-items-center">
+        <div class="card-img-body d-flex">
+          <img class="card-img" :src="'/img/menu1.png'" alt="Card image cap" />
+          <img class="card-img" :src="'/img/menu2.png'" alt="Card image cap" />
         </div>
+        <div class="card-body">
+          <p class="card-text">
+            En el Bar Solbes, nos esforzamos por ofrecer una variedad de
+            opciones que se adapten a las necesidades y preferencias de todos
+            nuestros clientes. Precios de las Tapas Los precios indicados en
+            nuestra carta están basados en las tapas para dos personas. Sin
+            embargo, entendemos que cada grupo tiene necesidades diferentes, por
+            lo que también ofrecemos tapas en porciones para una persona y para
+            tres o más personas. El precio de las tapas variará en función del
+            tamaño de la porción que elijas.
+          </p>
+          <ul>
+            <li>
+              Tapas para 1 persona: Ideal para quienes desean disfrutar de una
+              tapa individualmente o como aperitivo.
+            </li>
+            <li>Tapas para 2 personas: Perfectas para compartir en pareja.</li>
+            <li>
+              Tapas para 3 o más personas: Pensadas para grupos más grandes,
+              estas porciones son más generosas y permiten una experiencia
+              compartida más completa.
+            </li>
+            <li>
+              Platos Combinados Nuestros platos combinados están diseñados para
+              ofrecer una comida completa y equilibrada. Todos los platos
+              combinados vienen acompañados de patatas y una ración de verduras
+              frescas.
+            </li>
+          </ul>
+          <p>
+            Estamos aquí para hacer tu experiencia en el Bar Solbes lo más
+            agradable posible, así que si tienes alguna duda o necesitas más
+            información sobre nuestros precios y opciones de la carta, no dudes
+            en consultarnos. ¡Esperamos que disfrutes de tu visita!
+          </p>
+          <a
+            @click="$router.push('/calendario')"
+            class="btn btn-outline-primary"
+            >Reserva Ya</a
+          >
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
 body {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 h1 {
-    text-align: center;
-    font-family: 'pacifico';
-    color: #1f79ff;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #1f79ff;
 }
 
 .card {
-    border: none;
+  border: none;
 }
 
 .card-img {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 .vgr-cards .card {
-    display: flex;
-    flex-flow: wrap;
-    flex: 100%;
-    margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-.vgr-cards .card:nth-child(even) .card-img-body {
-    order: 2;
+.card-img-body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.vgr-cards .card:nth-child(even) .card-body {
-    padding-left: 0;
-    padding-right: 1.25rem;
-}
-
-@media (max-width: 576px) {
-    .vgr-cards .card {
-        display: block;
-    }
-}
-
-.vgr-cards .card-img-body {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
+.card-img {
+  width: 48%;
 }
 
 @media (max-width: 576px) {
-    .vgr-cards .card-img-body {
-        width: 100%;
-        height: 100%;
-        margin-bottom: 20px;
-    }
-}
+  .card-img-body {
+    flex-direction: column;
+    align-items: center;
+  }
 
-@media (min-width: 576px) {
-    .vgr-cards .card-img-body {
-        width: 100%;
-        height: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-.vgr-cards .card-img {
+  .card-img {
     width: 100%;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-
-@media (max-width: 1140px) {
-    .vgr-cards .card-img {
-        margin: 0;
-        transform: none;
-        width: 100%;
-        height: 100%;
-    }
+    margin-bottom: 10px;
+  }
 }
 
 .vgr-cards .card-body {
-    flex: 2;
-    padding: 0 0 0 1.25rem;
+  flex: 2;
+  padding: 0 0 0 1.25rem;
 }
 
 @media (max-width: 576px) {
-    .vgr-cards .card-body {
-        padding: 0;
-    }
+  .vgr-cards .card-body {
+    padding: 0;
+  }
 }
 </style>

@@ -10,15 +10,15 @@
 					</div>
 
 					<div class="col-2">
-						<router-link to="/menus" class="nav-item nav-link d-lg-block d-none">Menu</router-link>
+						<router-link to="/Carta" class="nav-item nav-link d-lg-block d-none">Carta</router-link>
 					</div>
 
 					<div class="col-4">
-						<router-link to="/"><img src="/public/img/logo.png" alt="Image"></router-link>
+						<router-link to="/" class="nav-item nav-link d-lg-block d-none title-item">Bar Solbes</router-link>
 					</div>
 
 					<div class="col-2">
-						<router-link to="/listAlergenos" class="nav-item nav-link d-lg-block d-none">Alérgenos</router-link>
+						<router-link to="/Eventos" class="nav-item nav-link d-lg-block d-none">Eventos</router-link>
 					</div>
 
 					<div class="col-2">
@@ -36,7 +36,7 @@
 						<div class="d-lg-none d-md-block">
 							<router-link class="nav-item nav-link" to="/calendario">Reservar</router-link>
 							<router-link class="nav-item nav-link" to="/menus">Menu</router-link>
-							<router-link class="nav-item nav-link" to="/listAlergenos">Alérgenos</router-link>
+							<router-link class="nav-item nav-link" to="/Eventos">Alérgenos</router-link>
 							<router-link class="nav-item nav-link" to="/aboutUs">Sobre nosotros</router-link>
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 .menu a {
 	color: #93BE0F;
 	font-size: 25px;
-	font-family: 'pacifico';
+	font-family: "Times New Roman", Times, serif;
 }
 
 .botMen {
@@ -78,5 +78,10 @@
 div img {
 	width: 250px;
 	height: 100px;
+}
+
+.title-item {
+	color: #000000 !important;
+	font-size: 40px !important;
 }
 </style>

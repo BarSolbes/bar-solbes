@@ -12,38 +12,7 @@ export default {
 <template>
     <div class="container">
         <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img v-bind:src="'/img/c1.jpg'" class="d-block w-100" alt="Image1">
-                    <div class="carousel-caption d-none d-md-block" id="t1">
-                        <h5>BIENVENIDO</h5>
-                        <p>Al restaurante L'assaig de Batoi</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img v-bind:src="'/img/c2.jpg'" class="d-block w-100" alt="Image2">
-                    <div class="carousel-caption d-none d-md-block" id="t1">
-                        <h5>Platos innovadores</h5>
-                        <p>Prueba nuestras delicionas y elaboradas recetas.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img v-bind:src="'/img/c4.jpg'" class="d-block w-100" alt="Image4">
-                    <div class="carousel-caption d-none d-md-block" id="t1">
-                        <h5>Prueba nuestra reposteria</h5>
-                        <p>Tenemos los mejores postres de Alcoy</p>
-                    </div>
-                </div>
+            <div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
@@ -72,7 +41,7 @@ div img {
 }
 
 div h5 {
-    font-family: 'pacifico';
+    font-family: "Times New Roman", Times, serif;
     font-size: 50px;
 }
 
