@@ -42,11 +42,6 @@
             información sobre nuestros precios y opciones de la carta, no dudes
             en consultarnos. ¡Esperamos que disfrutes de tu visita!
           </p>
-          <a
-            @click="$router.push('/calendario')"
-            class="btn btn-outline-primary"
-            >Reserva Ya</a
-          >
         </div>
       </div>
     </div>
