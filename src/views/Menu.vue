@@ -4,8 +4,8 @@
     <div class="card-group vgr-cards">
       <div class="card align-items-center">
         <div class="card-img-body d-flex">
-          <img class="card-img" :src="'/img/menu1.png'" alt="Card image cap" />
-          <img class="card-img" :src="'/img/menu2.png'" alt="Card image cap" />
+          <img class="card-img" src="../../public/img/menu1.png" alt="Card image cap" />
+          <img class="card-img" src="../../public/img/menu2.png" alt="Card image cap" />
         </div>
         <div class="card-body">
           <p class="card-text">
@@ -56,7 +56,7 @@ body {
 h1 {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  color: #1f79ff;
+  color: #000;
 }
 
 .card {

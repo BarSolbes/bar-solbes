@@ -4,7 +4,7 @@
         <div class="card-group vgr-cards mt-3">
             <div class="card align-items-center">
                 <div class="card-img-body">
-                    <img class="card-img" :src="'/img/a1.jpeg'" alt="a1">
+                    <img class="card-img" src="public/img/a1.jpeg" alt="a1">
                 </div>
                 <div class="card-body text-center">
                     <h4 class="card-title">Operaciones básicas en bar-cafetería</h4>
@@ -16,7 +16,7 @@
             </div>
             <div class="card align-items-center">
                 <div class="card-img-body">
-                    <img class="card-img" :src="'/img/a2.jpeg'" alt="a2">
+                    <img class="card-img" src="public/img/a2.jpeg" alt="a2">
                 </div>
                 <div class="card-body text-center">
                     <h4 class="card-title">Servicios en restaurante y acontecimientos especiales</h4>
@@ -62,7 +62,7 @@ body {
 h1 {
     text-align: center;
     font-family: "Times New Roman", Times, serif;
-    color: #1f79ff;
+    color: #000;
 }
 
 .card {
