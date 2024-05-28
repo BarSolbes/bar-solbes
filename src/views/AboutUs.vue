@@ -11,7 +11,7 @@
     <div class="card-group vgr-cards mt-3">
       <div class="card align-items-center">
         <div class="card-img-body">
-          <img class="card-img" :src="'/img/a3.jpg'" alt="a1" />
+          <img class="card-img" src="../../public/img/a3.jpg" alt="a1" />
         </div>
         <div class="card-body text-center">
           <h4 class="card-title">Nuestra Historia</h4>
@@ -27,7 +27,7 @@
       </div>
       <div class="card align-items-center">
         <div class="card-img-body">
-          <img class="card-img" :src="'/img/a1.jpg'" alt="a2" />
+          <img class="card-img" src="../../public/img/a1.jpg" alt="a2" />
         </div>
         <div class="card-body text-center">
           <h4 class="card-title">Nuestra Filosofía</h4>
