@@ -2,7 +2,7 @@
 </script>
 <template>
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row mb-4">
 			<div class="col">
 				<nav class="navbar navbar-expand-lg navbar-light menu">
 					<div class="col-2">

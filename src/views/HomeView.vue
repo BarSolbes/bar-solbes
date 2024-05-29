@@ -11,33 +11,26 @@ export default {
 </script>
 <template>
     <div class="container">
-        <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div>
+        <div class="row">
+            <div class="col-5"> 
+                <img class="card-img event-main-img" src="../../public/img/bar1.jpg" alt="a4" />
+    
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="col-5">
+                <h1 class="display-3">RESERVA YA</h1>
+                <a class="btn btn-primary" @click="$router.push('/calendario')">Reservar</a>
+
+            </div>
         </div>
+        
     </div>
-    <section id="header" class="jumbotron text-center mb-5">
-        <h1 class="display-3">RESERVA YA</h1>
-        <p class="lead">Prueba nuestros inovadores menus</p>
-        <a class="btn btn-primary" @click="$router.push('/calendario')">Reservar</a>
-    </section>
 </template>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/icon?family=Pacifico|Anton");
 
 div img {
-    height: 600px;
+    height: 680px;
 }
 
 div h5 {
@@ -62,6 +55,12 @@ div h5 {
 
 #header h1 {
     padding-top: 60px;
+}
+
+.btn-primary{
+    --bs-btn-bg:#93BE0F;
+    --bs-btn-border-color:#93BE0F;
+    --bs-btn-color: #93BE0F,
 }
 
 </style>
