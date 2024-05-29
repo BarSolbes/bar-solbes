@@ -21,6 +21,7 @@
     "vue": "^3.2.45",
     "vue-full-calendar": "^2.8.1-0",
     "vue-router": "^4.1.6",
+    "vue-sweetalert2": "^5.0.10",
     "vue2-slot-calendar": "^2.2.5",
     "yup": "^0.32.11"
   },

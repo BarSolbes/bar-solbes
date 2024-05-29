@@ -4,7 +4,6 @@
     <div class="container">
         <section id="header" class="jumbotron text-center mb-5">
             <h1 class="display-3">RESERVA YA</h1>
-            <p class="lead">Prueba nuestros innovadores menús</p>
             <a class="btn btn-primary" @click="$router.push('/calendario')">Reservar</a>
         </section>
     </div>
