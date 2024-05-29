@@ -1,13 +1,4 @@
 <script>
-
-export default {
-    data() {
-    },
-    computed: {
-    },
-    methods: {
-    },
-};
 </script>
 <template>
     <div class="container">
