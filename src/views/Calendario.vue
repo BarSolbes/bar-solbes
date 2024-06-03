@@ -8,7 +8,7 @@
           class="calendar-container text-center"
           style="height: 100%; overflow-y: auto"
         >
-          <FullCalendar :options="calendarOptions" />
+          <FullCalendar ref="fullCalendar" :options="calendarOptions" />
         </div>
       </div>
       <div class="col-lg-3"></div>
@@ -44,7 +44,7 @@ export default {
           {
             id: 1,
             title: "Iker - 3p",
-            start: "2024-06-05",
+            start: "2024-06-08",
             descripcion: "Nombre: Iker, Personas: 3, Hora: 09:00",
           },
           {
@@ -61,11 +61,22 @@ export default {
           },
         ],
         firstDay: 1,
+        validRange: this.validRange,
       },
     };
   },
   methods: {
     async mostrarFormulario(info) {
+      const fecha = new Date(info.dateStr);
+      if (fecha.getDay() === 3) { // 3 representa el miércoles
+        await Swal.fire({
+          icon: "error",
+          title: "Reserva no disponible",
+          text: "No se pueden hacer reservas los miércoles.",
+        });
+        return;
+      }
+
       const { value: formValues } = await Swal.fire({
         title: "Reserva",
         html:
@@ -84,6 +95,16 @@ export default {
 
       if (formValues) {
         const [nombre, numPersonas, hora] = formValues;
+
+        // Validaciones
+        if (!nombre || !numPersonas || !hora) {
+          await Swal.fire({
+            icon: "error",
+            title: "Campos incompletos",
+            text: "Por favor, rellena todos los campos.",
+          });
+          return;
+        }
 
         // Check if number of people exceeds the limit
         const numPersonasInt = parseInt(numPersonas);
@@ -105,12 +126,40 @@ export default {
       const event = info.event;
       const eventDescription = event.extendedProps.descripcion;
 
-      await Swal.fire({
+      const result = await Swal.fire({
         title: event.title,
         html: eventDescription,
         icon: "info",
-        confirmButtonText: "Visto",
+        showCancelButton: true,
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cerrar",
       });
+
+      if (result.isConfirmed) {
+        const { value: password } = await Swal.fire({
+          title: 'Introduce la contraseña',
+          input: 'password',
+          inputPlaceholder: 'Contraseña',
+          showCancelButton: true,
+          confirmButtonText: 'Eliminar',
+          cancelButtonText: 'Cancelar',
+        });
+
+        if (password === 'solbes24') {
+          this.eliminarEvento(event.id);
+          await Swal.fire({
+            icon: "success",
+            title: "Reserva eliminada",
+            text: "La reserva ha sido eliminada con éxito.",
+          });
+        } else if (password !== undefined) {
+          await Swal.fire({
+            icon: "error",
+            title: "Contraseña incorrecta",
+            text: "No se ha podido eliminar la reserva.",
+          });
+        }
+      }
     },
 
     agregarEvento(nombre, numPersonas, hora, fecha) {
@@ -127,6 +176,27 @@ export default {
         descripcion: `Nombre: ${nombre}, Personas: ${numPersonas}, Hora: ${hora}`,
       });
     },
+
+    eliminarEvento(eventId) {
+      const eventIndex = this.calendarOptions.events.findIndex(event => event.id === eventId);
+      if (eventIndex !== -1) {
+        this.calendarOptions.events.splice(eventIndex, 1);
+      }
+      const calendarApi = this.$refs.fullCalendar.getApi();
+      const event = calendarApi.getEventById(eventId);
+      if (event) {
+        event.remove();
+      }
+    },
+
+    validRange(nowDate) {
+      const today = new Date();
+      const end = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+      return {
+        start: today,
+        end: end,
+      };
+    }
   },
 };
 </script>
