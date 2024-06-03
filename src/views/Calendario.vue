@@ -62,6 +62,9 @@ export default {
         ],
         firstDay: 1,
         dayCellContent: this.customDayContent,
+        validRange: {
+          start: new Date(), // Fecha actual
+        },
       },
     };
   },
