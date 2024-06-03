@@ -61,14 +61,15 @@ export default {
           },
         ],
         firstDay: 1,
-        validRange: this.validRange,
+        dayCellContent: this.customDayContent,
       },
     };
   },
   methods: {
     async mostrarFormulario(info) {
       const fecha = new Date(info.dateStr);
-      if (fecha.getDay() === 3) { // 3 representa el miércoles
+      if (fecha.getDay() === 3) {
+        // 3 representa el miércoles
         await Swal.fire({
           icon: "error",
           title: "Reserva no disponible",
@@ -137,15 +138,15 @@ export default {
 
       if (result.isConfirmed) {
         const { value: password } = await Swal.fire({
-          title: 'Introduce la contraseña',
-          input: 'password',
-          inputPlaceholder: 'Contraseña',
+          title: "Introduce la contraseña",
+          input: "password",
+          inputPlaceholder: "Contraseña",
           showCancelButton: true,
-          confirmButtonText: 'Eliminar',
-          cancelButtonText: 'Cancelar',
+          confirmButtonText: "Eliminar",
+          cancelButtonText: "Cancelar",
         });
 
-        if (password === 'solbes24') {
+        if (password === "solbes24") {
           this.eliminarEvento(event.id);
           await Swal.fire({
             icon: "success",
@@ -178,7 +179,9 @@ export default {
     },
 
     eliminarEvento(eventId) {
-      const eventIndex = this.calendarOptions.events.findIndex(event => event.id === eventId);
+      const eventIndex = this.calendarOptions.events.findIndex(
+        (event) => event.id === eventId
+      );
       if (eventIndex !== -1) {
         this.calendarOptions.events.splice(eventIndex, 1);
       }
@@ -191,12 +194,16 @@ export default {
 
     validRange(nowDate) {
       const today = new Date();
-      const end = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+      const end = new Date(
+        today.getFullYear(),
+        today.getMonth() + 1,
+        today.getDate()
+      );
       return {
         start: today,
         end: end,
       };
-    }
+    },
   },
 };
 </script>

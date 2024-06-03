@@ -39,6 +39,13 @@
           </div>
         </div>
       </div>
+      <div class="event-item">
+        <div class="card align-items-center">
+          <div class="card-img-body">
+            <img class="card-img" src="../../public/img/menu3.png" alt="a2" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -5,7 +5,7 @@
       <div class="card align-items-center">
         <div class="card-img-body d-flex">
           <img class="card-img" src="../../public/img/menu1.png" alt="Card image cap" />
-          <img class="card-img" src="../../public/img/menu22.png" alt="Card image cap" />
+          <img class="card-img" src="../../public/img/menu2.png" alt="Card image cap" />
         </div>
         <div class="card-body">
           <p class="card-text">

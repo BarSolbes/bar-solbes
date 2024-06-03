@@ -39,9 +39,17 @@
         </div>
       </div>
     </div>
+    <!-- Imágenes agregadas -->
+    <div class="row text-center align-items-center">
+      <div class="col-6">
+        <img class="img-fluid" src="../../public/img/imagen1.jpg" alt="Imagen 1" />
+      </div>
+      <div class="col-6">
+        <img class="img-fluid" src="../../public/img/imagen2.jpg" alt="Imagen 2" />
+      </div>
+    </div>
   </div>
 </template>
-
 <style scoped>
 body {
   margin-top: 20px;
