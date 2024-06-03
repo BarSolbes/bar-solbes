@@ -2,7 +2,6 @@
   <div class="container mb-5">
     <div class="row text-center">
       <h1>Selecciona el día de la reserva</h1>
-      <div class="col-lg-3"></div>
       <div class="col-lg-6 mb-5 mt-3">
         <div
           class="calendar-container text-center"
@@ -11,7 +10,11 @@
           <FullCalendar ref="fullCalendar" :options="calendarOptions" />
         </div>
       </div>
-      <div class="col-lg-3"></div>
+      <div class="col-lg-1"></div>
+      <!-- Espacio en blanco -->
+      <div class="col-lg-5 d-flex align-content-left justify-content-left">
+        <img src="../../public/img/bar1.jpg" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -45,19 +48,22 @@ export default {
             id: 1,
             title: "Iker - 3p",
             start: "2024-06-08",
-            descripcion: "Nombre: Iker, Personas: 3, Hora: 09:00",
+            descripcion:
+              "Nombre: Iker, Personas: 3, Hora: 09:00, Teléfono: 666666666",
           },
           {
             id: 2,
             title: "Paula - 5p",
             start: "2024-06-06",
-            descripcion: "Nombre: Paula, Personas: 5, Hora: 10:00",
+            descripcion:
+              "Nombre: Paula, Personas: 5, Hora: 10:00, Teléfono: 777777777",
           },
           {
             id: 3,
             title: "Ester - 2p",
             start: "2024-06-07",
-            descripcion: "Nombre: Ester, Personas: 2, Hora: 11:00",
+            descripcion:
+              "Nombre: Ester, Personas: 2, Hora: 11:00, Teléfono: 999999999",
           },
         ],
         firstDay: 1,
@@ -85,6 +91,7 @@ export default {
         title: "Reserva",
         html:
           '<input id="swal-input1" class="swal2-input" placeholder="Nombre">' +
+          '<input id="swal-input4" class="swal2-input" type="number" placeholder="Télefono">' +
           '<input id="swal-input2" class="swal2-input" type="number" placeholder="Número de personas">' +
           '<input id="swal-input3" class="swal2-input" type="time" placeholder="Hora">',
         focusConfirm: false,
@@ -93,15 +100,16 @@ export default {
             document.getElementById("swal-input1").value,
             document.getElementById("swal-input2").value,
             document.getElementById("swal-input3").value,
+            document.getElementById("swal-input4").value,
           ];
         },
       });
 
       if (formValues) {
-        const [nombre, numPersonas, hora] = formValues;
+        const [nombre, numPersonas, hora, telefono] = formValues;
 
         // Validaciones
-        if (!nombre || !numPersonas || !hora) {
+        if (!nombre || !numPersonas || !hora || !telefono) {
           await Swal.fire({
             icon: "error",
             title: "Campos incompletos",
@@ -122,7 +130,7 @@ export default {
         }
 
         // Add the event
-        this.agregarEvento(nombre, numPersonas, hora, info.dateStr);
+        this.agregarEvento(nombre, numPersonas, hora, telefono, info.dateStr);
       }
     },
 
@@ -137,6 +145,7 @@ export default {
         showCancelButton: true,
         confirmButtonText: "Eliminar",
         cancelButtonText: "Cerrar",
+        width: 700
       });
 
       if (result.isConfirmed) {
@@ -166,7 +175,7 @@ export default {
       }
     },
 
-    agregarEvento(nombre, numPersonas, hora, fecha) {
+    agregarEvento(nombre, numPersonas, hora, telefono, fecha) {
       const title = `${nombre} - ${numPersonas}p`;
       const nextId =
         this.calendarOptions.events.length > 0
@@ -177,7 +186,7 @@ export default {
         id: nextId,
         title: title,
         start: fecha,
-        descripcion: `Nombre: ${nombre}, Personas: ${numPersonas}, Hora: ${hora}`,
+        descripcion: `Nombre: ${nombre}, Personas: ${numPersonas}, Hora: ${hora}, Telefono: ${telefono}`,
       });
     },
 
@@ -221,6 +230,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+}
+
+img {
+  max-width: 700px;
 }
 
 .calendar-container {
